@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            border: 10px solid red;
+            margin: 20px;
+            padding: 20px;
+        }
+        .box:nth-child(1){
+            box-sizing: content-box;
+        }
+        .box:nth-child(3){
+            box-sizing: border-box;
+        }
+        .box:nth-child(2){
+            box-sizing: padding-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

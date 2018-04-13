@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap div:nth-child(1){
+            width: 400px;
+            height: 200px;
+            background-color: chocolate;
+            float: left;
+        }
+        .wrap div:nth-child(2){
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+            float: left;
+        }
+        .wrap{
+            border: 4px solid #000;
+            padding: 20px;
+        }
+        .footer{
+            height: 50px;
+            background-color: brown;
+            clear: left;
+        }
+
+        /*闭合浮动, Bootstrap的写法*/
+        /*IE浏览器设置或检索对象的缩放比例*/
+        .clearfix{
+            *zoom: 1;
+        }
+        .clearfix:before, .clearfix:after{
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+        .clearfix:after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div>块1</div>
+        <div>块2</div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+</body>
+</html>
