@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a:link, a:visited{
+    color: #633;
+}
+a:hover{
+    color: #966;
+}
+h1 {
+    margin-bottom: 11px;
+    padding-top: 15px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #ccc;
+    font: normal italic 1.5em/18px Georgia, serif;
+    color: #633;
+}
+h2, h3{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 18px;
+}
+h2 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    color: #999;
+}
+h3 {
+    padding-bottom: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #633;
+}
+
+#page{
+    width: 960px;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+    background-color: #fff;
+}
+#header, #footer{
+    height: 192px;
+    color: #fff;
+}
+#header{
+    background-color: #966;
+}
+#header p{
+    float: left;
+    padding: 60px 24px 24px 24px;
+    font-size: 1.5em;
+    line-height: 1em;
+    color: #fff;
+}
+#header ul{
+    padding-top: 62px;
+    padding-right: 12px;
+    text-align: right;
+    list-style: none;
+}
+#header li{
+    display: inline;
+    margin: 0 12px;
+}
+#header li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25em;
+    line-height: 1em;
+}
+#header li a:hover {
+    color: #300;
+}
+#footer{
+    clear: right;
+    height: 192px;
+    background: #333 url("../images/footer.png") top no-repeat;
+    background-size: 100% 100%;
+    font-size: 10px;
+    line-height: 1em;
+    color: #fff;
+}
+#footer p {
+    padding: 132px 0 0 24px;
+    font-size: 20px;
+}
+#content-primary, #content-secondary{
+    float: right;
+    box-sizing: border-box;
+    padding: 24px;
+}
+#content-primary{
+    width: 768px;
+    padding-left: 100px;
+    border-left: 2px solid #ccc;
+}
+#content-primary p {
+    padding-bottom: 18px;
+}
+#content-primary img{
+    width: 350px;
+    height: 250px;
+    float: left;
+    margin: 0 24px 24px -60px;
+}
+#content-secondary{
+    width: 192px;
+}
