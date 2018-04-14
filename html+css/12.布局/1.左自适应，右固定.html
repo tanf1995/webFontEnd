@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #bbb;
+        }
+        header, footer{
+            height: 100px;
+            background-color: #fff;
+        }
+        .main{
+            margin: 50px 0;
+        }
+        .content, .main aside{
+            height: 500px;
+        }
+        .main .content-wrap{
+            width: 100%;
+            float: left;
+            margin-left: -120px;
+            box-sizing: border-box;
+            padding: 0 50px;
+        }
+        .content-wrap .content{
+            margin-left: 120px;
+            background-color: #fff;
+        }
+        .main aside{
+            width: 120px;
+            float: left;
+            background-color: #fff;
+        }
+
+        .clearfix{
+            *zoom: 1;
+        }
+        .clearfix:before, .clearfix:after{
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+        .clearfix:after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <div class="main clearfix">
+        <div class="content-wrap">
+            <div class="content"></div>
+        </div>
+        <aside></aside>
+    </div>
+
+    <footer></footer>
+</body>
+</html>

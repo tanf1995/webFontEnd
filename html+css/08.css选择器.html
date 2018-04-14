@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+        div[name]{
+            background-color: chocolate;
+        }
+        div[name="aBox"]{
+            border: 2px solid #000;
+        }
+        div[name^="a"]{
+             border-radius: 10px;
+         }
+        div[name$="v"]{
+            box-shadow: 2px 2px 5px;
+        }
+        div[name*="i"]{
+            transform: rotate(45deg);
+        }
+        div[name|="a"]{
+            transform: translateX(50px);
+        }
+        div[name~="a-wrap"]{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" name="aBox">
+
+    </div>
+    <div class="box" name="aDiv">
+
+    </div>
+    <div class="box" name="a-wrap">
+
+    </div>
+</body>
+</html>
