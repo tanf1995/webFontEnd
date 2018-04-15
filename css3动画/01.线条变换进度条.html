@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #411F2D;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .outer{
+            width: 10px;
+            height: 0;
+            margin: 20px;
+            position: relative;
+            transform: rotate(-60deg);
+            animation: outer 1.5s ease-out infinite;
+        }
+        .outer:before, .outer:after, .middle:before, .middle:after{
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #F88863;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .outer:before, .middle:before{
+            top: 0;
+        }
+        .outer:after, .middle:after{
+            top: 100%;
+        }
+        .outer .middle{
+            width: 4px;
+            height: 75%;
+            background-color: #AC4147;
+            margin: 0 auto;
+            position: absolute;
+            left: 3px;
+            animation: mid 1.5s ease-out infinite;
+        }
+        .middle:before, .middle:after{
+            width: 16px;
+            height: 16px;
+            margin-left: -6px;
+        }
+        .middle .inner-top, .middle .inner-bottom{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #F88863;
+            position: absolute;
+            left: -2px;
+        }
+        .middle .inner-top{
+            animation: innerTop 1.5s ease-out infinite;
+        }
+        .middle .inner-bottom{
+            animation: innerBottom 1.5s ease-out infinite;
+        }
+        .outer:nth-child(1),
+        .outer:nth-child(1) .middle,
+        .outer:nth-child(1) .middle .inner-top,
+        .outer:nth-child(1) .middle .inner-bottom{
+            animation-delay: 0s;
+        }
+        .outer:nth-child(2),
+        .outer:nth-child(2) .middle,
+        .outer:nth-child(2) .middle .inner-top,
+        .outer:nth-child(2) .middle .inner-bottom{
+            animation-delay: 0.15s;
+        }
+        .outer:nth-child(3),
+        .outer:nth-child(3) .middle,
+        .outer:nth-child(3) .middle .inner-top,
+        .outer:nth-child(3) .middle .inner-bottom{
+            animation-delay: 0.3s;
+        }
+        .outer:nth-child(4),
+        .outer:nth-child(4) .middle,
+        .outer:nth-child(4) .middle .inner-top,
+        .outer:nth-child(4) .middle .inner-bottom{
+            animation-delay: 0.45s;
+        }
+        .outer:nth-child(5),
+        .outer:nth-child(5) .middle,
+        .outer:nth-child(5) .middle .inner-top,
+        .outer:nth-child(5) .middle .inner-bottom{
+            animation-delay: 0.6s;
+        }
+        .outer:nth-child(6),
+        .outer:nth-child(6) .middle,
+        .outer:nth-child(6) .middle .inner-top,
+        .outer:nth-child(6) .middle .inner-bottom{
+            animation-delay: 0.75s;
+        }
+        .outer:nth-child(7),
+        .outer:nth-child(7) .middle,
+        .outer:nth-child(7) .middle .inner-top,
+        .outer:nth-child(7) .middle .inner-bottom{
+            animation-delay: 0.9s;
+        }
+        .outer:nth-child(8),
+        .outer:nth-child(8) .middle,
+        .outer:nth-child(8) .middle .inner-top,
+        .outer:nth-child(8) .middle .inner-bottom{
+            animation-delay: 1.05s;
+        }
+        .outer:nth-child(9),
+        .outer:nth-child(9) .middle,
+        .outer:nth-child(9) .middle .inner-top,
+        .outer:nth-child(9) .middle .inner-bottom{
+            animation-delay: 1.2s;
+        }
+        .outer:nth-child(10),
+        .outer:nth-child(10) .middle,
+        .outer:nth-child(10) .middle .inner-top,
+        .outer:nth-child(10) .middle .inner-bottom{
+            animation-delay: 1.35s;
+        }
+        @keyframes outer {
+            0%{
+                transform: rotate(-90deg);
+                height: 0;
+            }
+            25%{
+                transform: rotate(-90deg);
+                height: 0;
+            }
+            45%{
+                height: 200px;
+            }
+            55%{
+                height: 200px;
+            }
+            75%{
+                transform: rotate(0deg);
+                height: 0;
+            }
+            100%{
+                transform: rotate(0deg);
+                height: 0;
+            }
+        }
+        @keyframes mid {
+            0%{
+                top: 0;
+            }
+            25%{
+                top: 0;
+            }
+            45%{
+                top: 25px;
+            }
+            55%{
+                top: 25px;
+            }
+            75%{
+                top: 0;
+            }
+            100%{
+                top: 0;
+            }
+        }
+        @keyframes innerTop {
+            0%{
+                top: 0;
+            }
+            25%{
+                top: 50%;
+            }
+            45%{
+                top: 50%;
+            }
+            55%{
+                top: 50%;
+            }
+            75%{
+                top: 0;
+            }
+            100%{
+                top: 0;
+            }
+        }
+        @keyframes innerBottom {
+            0%{
+                top: 100%;
+            }
+            25%{
+                top: 100%;
+            }
+            45%{
+                top: 50%;
+            }
+            55%{
+                top: 50%;
+            }
+            75%{
+                top: 100%;
+            }
+            100%{
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner-top"></div>
+            <div class="inner-bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
