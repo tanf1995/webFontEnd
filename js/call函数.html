@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function say() {
+            console.log(this.name);
+        }
+
+        var name = "window";
+        var Obj = {
+            name: "obj"
+        }
+
+        say.call(window);
+        say.call(Obj);
+    </script>
+</body>
+</html>

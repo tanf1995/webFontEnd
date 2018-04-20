@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function *gen() {  //函数名前加 * ，定义一个生成器函数
+            yield "first one";
+            yield "second one";
+            yield "last one";
+            return "finish";
+        }
+
+        var iter = gen();
+        console.log(iter.next());
+        console.log(iter.next());
+        console.log(iter.next());
+        console.log(iter.next());
+    </script>
+</body>
+</html>

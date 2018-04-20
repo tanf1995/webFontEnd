@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+    <script>
+        var name = "tf";
+        
+        var Obj = {
+            name: "obj",
+            getName: function () {
+                return function () {
+                    console.log(this.name);
+                }
+            },
+            getName2: function () {
+                var that = this;
+                return function () {
+                    console.log(that.name);
+                }
+            },
+            getName3: function () {
+                console.log(this.name);
+            }
+        }
+        Obj.getName()(); //tf
+        Obj.getName2()();  //obj
+        Obj.getName3(); //obj
+        // Obj.getName() 和 Obj.getName2() 成为了闭包，是全局变量，此时调用该闭包，this指向全局对象window
+
+        var Obj2 = {
+            name: "new obj"
+        }
+
+        Obj.getName().call(Obj2); // new obj
+    </script>
+</body>
+</html>
