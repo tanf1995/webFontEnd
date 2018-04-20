@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        //1.工厂模式
+        // 缺点：每个实例无法共享方法或属性
+        function Obj1() {
+            var o = new Object;
+            o.name = "工厂模式";
+            
+            return o;
+        }
+        
+        //2.构造函数模式
+        // 缺点： 同上
+        function Obj2() {
+            this.name = "构造函数模式";
+        }
+        
+        //3.原型模式
+        //缺点： 实例无法初始化属性
+        function Obj3() {
+            
+        }
+        Obj3.prototype.name = "原型模式";
+        Obj3.prototype.sayName = function () {
+            console.log(this.name);
+        }
+        
+        //4.构造函数、原型混合
+        //用的最多
+        function Obj4(name) {
+            this.name = name;
+        }
+        Obj4.prototype.sayName = function () {
+            console.log(this.name);
+        }
+
+        //5.动态原型模式
+        //原理同上，视觉封装性更强
+        function Obj5(name) {
+            this.name = name;
+            if(typeof Obj5._initialzed == 'undefined'){
+                Obj5.prototype.sayName = function () {
+                    console.log(this.name);
+                }
+            }
+            Obj5._initialzed = true;
+        }
+
+        var o1 = new Obj5("动态原型模式1");
+        var o2 = new Obj5("动态原型模式2");
+
+        o1.sayName();
+        o2.sayName();
+        console.log(o1.sayName === o2.sayName);
+    </script>
+</body>
+</html>
