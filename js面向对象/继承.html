@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Animal() {
+            this.species = "动物";
+        }
+        Animal.prototype.blode = "o型";
+        //绑定构造函数
+        function Cat(name) {
+            Animal.call(this, arguments);
+            this.name = name;
+        }
+
+        var cat = new Cat("猫");
+        console.log(cat.species + ':' + cat.name);
+        console.log(cat.constructor == Cat);
+
+        //原型继承
+        function Dog(name) {
+            this.name = name;
+        }
+        Dog.prototype = new Animal();
+        Dog.prototype.constructor = Dog;
+
+        var dog = new Dog("来福");
+        console.log(dog.species + ':' + dog.name);
+        console.log(dog.constructor == Animal);  //false
+        console.log(dog.constructor == Dog);  // true
+
+        //直接原型继承
+        function Horse(name) {
+            this.name = name;
+        }
+
+        //利用空对象继承，继承父类原型的属性
+        function extend(Child, Parent) {
+            var F = function () {};
+            F.prototype = Parent.prototype;
+            Child.prototype = new F();
+            Child.prototype.constructor = Child;
+            Child.uber = Parent.prototype;  //备用性质，与父类连接通道
+        }
+
+        function Cow(name) {
+            name = name || "牛";
+            this.name = name;
+        }
+        extend(Cow, Animal);
+        var cow = new Cow();
+        console.log(cow.blode + '-' + cow.name);
+    </script>
+</body>
+</html>

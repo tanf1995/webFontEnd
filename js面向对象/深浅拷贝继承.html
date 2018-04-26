@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝继承
+        function extendCopy(p) {
+            var c ={};
+            for(var i in p){
+                c[i] = p[i];
+            }
+            c.uber = p;
+            return c;
+        }
+        var Chinese = {
+            country: "中国",
+            brithPlace: ["四川", "重庆"]
+        }
+        var Teacher = {
+            job: "教师"
+        }
+
+        var t1 = extendCopy(Chinese);
+        t1.job = Teacher.job;
+        console.log(t1.country + '--' + t1.job);
+
+        var po1 = extendCopy(Chinese);
+        var po2 = extendCopy(Chinese);
+
+        console.log(po1.brithPlace);
+        po2.brithPlace.push("江西");
+        console.log(po2.brithPlace);
+        console.log(po1.brithPlace);
+
+        //深拷贝继承
+        function deepCopy(p, c) {
+            var c = c || {};
+            for(var i in p){
+                if(typeof p[i] == 'object'){
+                    c[i] = p[i].constructor === Array?[]:{};
+                    deepCopy(p[i], c[i]);
+                }else{
+                    c[i] = p[i];
+                }
+            }
+            return c;
+        }
+
+        var p1 = deepCopy(Chinese);
+        var p2 = deepCopy(Chinese);
+
+        console.log(p1.brithPlace);
+        p2.brithPlace.push("湖北");
+        console.log(p2.brithPlace);
+        console.log(p1.brithPlace);
+    </script>
+</body>
+</html>
