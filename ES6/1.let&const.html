@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        var a = [];
+        for (var i=0;i<10;i++){
+            a[i] = function () {
+                console.log(i);
+            };
+        }
+        a[6]();
+        console.log(i);  // i 成了window的属性，循环时不停的更新i，最后i=10
+
+        var b = [];
+        for(let i=0;i<10;i++){  // 块级作用域，且循环内部为设置循环变量处子作用域
+            b[i] = function () {
+                console.log(i);
+            }
+        }
+        b[6]();  // 6
+
+        {
+            // 块级作用域, 使用let
+        }
+
+        const PI = 3.14;
+        const li = [1, 2, 3];
+        const obj = {
+            name: "tf",
+            age: 22
+        };
+    </script>
+</body>
+</html>

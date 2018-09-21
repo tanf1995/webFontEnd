@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // 参数默认声明
+        function add(x=0, y=0) {
+            return x + y;
+        }
+        console.log(add());
+
+        function foo({ name="unkonw", age }) {
+            return "name: " + name + ", age: " + age;
+        }
+        console.log(foo({ name: "tf", age: 22 }));
+
+        console.log(foo.length);  // 1
+
+        // 作用域
+        let x = 1;
+        function f1(y=x) {
+            let x = 2;
+            console.log(y);
+        }
+        f1();  // 1
+
+        // rest
+        function f2(...args) {
+            for (var arg of args){
+                console.log(arg);
+            }
+        }
+        f2(2, '3', 'sc');
+
+        // name
+        var bar = function() {
+
+        };
+        console.log(bar.name);  // bar
+
+        // 箭头
+        console.log([1, 2, 3].map( x => {
+            console.log(this);  // window
+            return x**2;
+        } ));
+
+        var num = 5;
+        // setTimeout( () => { console.log(this.num) }, 500);
+
+
+        function f3() {
+            var num = 10;
+            console.log(this.num);
+            function inner() {
+                console.log(this.num);
+            }
+            return inner;
+        }
+        var outerf3 = f3();
+        outerf3();
+
+        function f4() {
+            this.num = 10;
+            setTimeout(() => {console.log(this.num)}, 500);
+            setTimeout(function () {
+                console.log(this.num);
+            }, 500)
+        }
+        f4();
+
+        // 绑定对象
+        function printName() {
+            console.log(this.name);
+        }
+        var person = {
+            name: "tf"
+        };
+        printName();
+        // printName.call(person);
+        person::printName;
+        printName();
+    </script>
+</body>
+</html>

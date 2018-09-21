@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // 解构数组
+        let [a, b] = [1, 2];
+        console.log(a);  // 1
+        console.log(b);  // 2
+
+        [a, b] = [b, a];
+        console.log(a);  // 2
+        console.log(b);  // 1
+
+        let [, , third] = ["a", "b", "c"];
+        console.log(third);  // c
+
+        let [name, ...other] = ['tf', 'male', 'bsk', 22];
+        console.log(name);
+        console.log(other);
+        // 解构对象
+        let { pname: mname, age } = {
+            age: 18,
+            pname: 'zs'
+        };
+        console.log(mname);
+        console.log(age);
+
+        // 函数,默认参数
+        function fun(x, y=1) {
+            return x + y;
+        }
+        sumVa = fun(2);
+        console.log(sumVa);
+    </script>
+</body>
+</html>
